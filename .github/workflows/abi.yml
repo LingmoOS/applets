@@ -1,0 +1,59 @@
+name: ABI Compliance Check
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  abi-check:
+    runs-on: ubuntu-24.04
+    container: debian:trixie
+
+    steps:
+      - name: Install dependencies
+        run: |
+          apt-get update -qq
+          apt-get install -y -qq cmake ninja-build \
+            qt6-base-dev qt6-declarative-dev \
+            abi-compliance-checker curl jq \
+            liblingmoplugin-dev liblingmoconfig-dev \
+            liblingmoispc-dev liblingmoutils-dev
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build current branch
+        run: |
+          cmake -B build-current -G Ninja \
+            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+            -DBUILD_APPLETS=OFF -DBUILD_TESTING=OFF
+          cmake --build build-current
+
+      - name: Checkout base branch
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE="origin/${{ github.base_ref }}"
+          else
+            BASE="HEAD~1"
+          fi
+          git checkout $BASE -- .
+          cmake -B build-base -G Ninja \
+            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+            -DBUILD_APPLETS=OFF -DBUILD_TESTING=OFF
+          cmake --build build-base
+
+      - name: Run ABI compliance check
+        run: |
+          abi-compliance-checker -lib libLingmoApplets.so.1 \
+            -old build-base/src/libLingmoApplets.so \
+            -new build-current/src/libLingmoApplets.so \
+            -headers include/ \
+            -report-path abi-report.html || true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: abi-report
+          path: abi-report.html

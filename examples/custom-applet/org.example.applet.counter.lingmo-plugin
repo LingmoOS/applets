@@ -1,0 +1,12 @@
+{
+    "id":          "org.example.applet.counter",
+    "type":        "applet",
+    "version":     "1.0.0",
+    "api-name":    "org.lingmo.Applet",
+    "api-version": "1.0",
+    "library":     "lingmo-applet-example-counter",
+    "name":        { "en": "Counter (Example)" },
+    "description": { "en": "Example applet: counts elapsed seconds since activation." },
+    "icon":        "chronometer",
+    "category":    "example"
+}

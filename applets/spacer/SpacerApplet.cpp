@@ -1,22 +1,50 @@
 #include "SpacerApplet.h"
 #include <LingmoApplets/AppletContext.h>
 #include <LingmoApplets/AppletFactory.h>
+
 namespace Lingmo {
-SpacerApplet::SpacerApplet(QObject *p) : Applet(p) {}
+
+class SpacerAppletPrivate {
+public:
+    bool flexible  = true;
+    int  fixedSize = 0;
+};
+
+SpacerApplet::SpacerApplet(QObject *parent)
+    : Applet(parent)
+    , d(std::make_unique<SpacerAppletPrivate>())
+{}
+
 SpacerApplet::~SpacerApplet() = default;
+
 void SpacerApplet::activate(AppletContext *ctx)
 {
-    flexible_  = ctx->readConfig(QStringLiteral("flexible"), true).toBool();
-    fixedSize_ = ctx->readConfig(QStringLiteral("fixedSize"), 0).toInt();
+    d->flexible  = ctx->readConfig(QStringLiteral("flexible"),  true).toBool();
+    d->fixedSize = ctx->readConfig(QStringLiteral("fixedSize"), 0).toInt();
 }
+
 void SpacerApplet::deactivate() {}
-bool SpacerApplet::flexible() const { return flexible_; }
-void SpacerApplet::setFlexible(bool v) {
-    if (flexible_ == v) return; flexible_ = v; emit flexibleChanged();
+
+bool SpacerApplet::flexible() const  { return d->flexible; }
+
+void SpacerApplet::setFlexible(bool v)
+{
+    if (d->flexible == v) return;
+    d->flexible = v;
+    if (ctx()) ctx()->writeConfig(QStringLiteral("flexible"), v);
+    emit flexibleChanged();
 }
-int  SpacerApplet::fixedSize() const { return fixedSize_; }
-void SpacerApplet::setFixedSize(int px) {
-    if (fixedSize_ == px) return; fixedSize_ = px; emit fixedSizeChanged();
+
+int  SpacerApplet::fixedSize() const { return d->fixedSize; }
+
+void SpacerApplet::setFixedSize(int px)
+{
+    if (d->fixedSize == px) return;
+    d->fixedSize = px;
+    if (ctx()) ctx()->writeConfig(QStringLiteral("fixedSize"), px);
+    emit fixedSizeChanged();
 }
+
 LINGMO_EXPORT_APPLET("org.lingmo.applet.spacer", SpacerApplet)
+
 } // namespace Lingmo
