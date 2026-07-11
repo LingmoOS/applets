@@ -1,0 +1,13 @@
+{
+    "id":          "org.lingmo.applet.spacer",
+    "type":        "applet",
+    "version":     "1.0.0",
+    "api-name":    "org.lingmo.Applet",
+    "api-version": "1.0",
+    "library":     "lingmo-applet-spacer",
+    "name":        { "en": "Spacer", "zh_CN": "托盘间距" },
+    "description": { "en": "Flexible or fixed-size spacer between panel applets",
+                     "zh_CN": "面板 applet 之间的弹性或固定间距" },
+    "icon":        "distribute-horizontal-equal-symbolic",
+    "category":    "utilities"
+}

@@ -1,0 +1,13 @@
+{
+    "id":          "org.lingmo.applet.volume",
+    "type":        "applet",
+    "version":     "1.0.0",
+    "api-name":    "org.lingmo.Applet",
+    "api-version": "1.0",
+    "library":     "lingmo-applet-volume",
+    "name":        { "en": "Volume", "zh_CN": "音量" },
+    "description": { "en": "Control audio volume and output device",
+                     "zh_CN": "控制音频音量和输出设备" },
+    "icon":        "audio-volume-high-symbolic",
+    "category":    "multimedia"
+}

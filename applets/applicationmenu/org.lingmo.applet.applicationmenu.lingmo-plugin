@@ -1,0 +1,13 @@
+{
+    "id":          "org.lingmo.applet.applicationmenu",
+    "type":        "applet",
+    "version":     "1.0.0",
+    "api-name":    "org.lingmo.Applet",
+    "api-version": "1.0",
+    "library":     "lingmo-applet-applicationmenu",
+    "name":        { "en": "Application Menu", "zh_CN": "应用菜单" },
+    "description": { "en": "Browse and launch applications by category",
+                     "zh_CN": "按分类浏览并启动应用程序" },
+    "icon":        "application-menu",
+    "category":    "launcher"
+}

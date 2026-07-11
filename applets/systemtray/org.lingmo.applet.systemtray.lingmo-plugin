@@ -1,0 +1,13 @@
+{
+    "id":          "org.lingmo.applet.systemtray",
+    "type":        "applet",
+    "version":     "1.0.0",
+    "api-name":    "org.lingmo.Applet",
+    "api-version": "1.0",
+    "library":     "lingmo-applet-systemtray",
+    "name":        { "en": "System Tray", "zh_CN": "系统托盘" },
+    "description": { "en": "Host for StatusNotifierItem applications",
+                     "zh_CN": "承载 StatusNotifierItem 应用程序的托盘区域" },
+    "icon":        "utilities-system-monitor-symbolic",
+    "category":    "system"
+}

@@ -1,0 +1,14 @@
+#pragma once
+
+#include <QtCore/qglobal.h>
+
+#if defined(LINGMOAPPLETS_LIBRARY)
+#  define LINGMOAPPLETS_EXPORT Q_DECL_EXPORT
+#else
+#  define LINGMOAPPLETS_EXPORT Q_DECL_IMPORT
+#endif
+
+#if defined(LINGMOAPPLETS_STATIC)
+#  undef LINGMOAPPLETS_EXPORT
+#  define LINGMOAPPLETS_EXPORT
+#endif

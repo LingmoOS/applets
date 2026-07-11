@@ -1,0 +1,13 @@
+{
+    "id":          "org.lingmo.applet.digitalclock",
+    "type":        "applet",
+    "version":     "1.0.0",
+    "api-name":    "org.lingmo.Applet",
+    "api-version": "1.0",
+    "library":     "lingmo-applet-digitalclock",
+    "name":        { "en": "Digital Clock", "zh_CN": "数字时钟" },
+    "description": { "en": "Show current time and date",
+                     "zh_CN": "显示当前时间和日期" },
+    "icon":        "clock",
+    "category":    "utilities"
+}

@@ -1,0 +1,21 @@
+name: Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  deb:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build tools
+        run: sudo apt-get install -y devscripts debhelper
+      - name: Build package
+        run: dpkg-buildpackage -us -uc -b
+      - name: Upload .deb
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb-packages
+          path: ../*.deb

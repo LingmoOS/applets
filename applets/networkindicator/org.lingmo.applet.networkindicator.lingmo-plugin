@@ -1,0 +1,13 @@
+{
+    "id":          "org.lingmo.applet.networkindicator",
+    "type":        "applet",
+    "version":     "1.0.0",
+    "api-name":    "org.lingmo.Applet",
+    "api-version": "1.0",
+    "library":     "lingmo-applet-networkindicator",
+    "name":        { "en": "Network Indicator", "zh_CN": "网络指示器" },
+    "description": { "en": "Show network connection status and signal strength",
+                     "zh_CN": "显示网络连接状态和信号强度" },
+    "icon":        "network-wireless-symbolic",
+    "category":    "system"
+}

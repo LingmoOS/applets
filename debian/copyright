@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: lingmo-applets
+Upstream-Contact: dev@lingmo.org
+Source: https://github.com/Matrinsoft/lingmo-applets
+
+Files: *
+Copyright: 2024 Lingmo Desktop Contributors
+License: LGPL-2.1+

@@ -1,0 +1,39 @@
+Source: lingmo-applets
+Section: libs
+Priority: optional
+Maintainer: Lingmo Desktop Team <dev@lingmo.org>
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake (>= 3.21),
+ qt6-base-dev,
+ qt6-declarative-dev,
+ liblingmoplugin-dev,
+ liblingmoconfig-dev,
+ liblingmoispc-dev,
+ liblingmoutils-dev
+Standards-Version: 4.6.2
+Homepage: https://lingmo.org
+
+Package: liblingmoapplets1
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Lingmo Desktop applet framework (runtime)
+ Provides the Lingmo::Applet base class and AppletHost for loading
+ applet plugins into panel and desktop surface processes.
+
+Package: liblingmoapplets-dev
+Architecture: any
+Multi-Arch: same
+Depends: liblingmoapplets1 (= ${binary:Version}), ${misc:Depends}
+Description: Lingmo Desktop applet framework (development files)
+ Headers and CMake targets for developing applets against the
+ Lingmo applet framework.
+
+Package: lingmo-applets
+Architecture: any
+Depends: liblingmoapplets1 (= ${binary:Version}), ${shlibs:Depends}, ${misc:Depends}
+Description: Lingmo Desktop built-in applets
+ Built-in panel applets: Application Menu, Task Manager, System Tray,
+ Digital Clock, Battery, Volume, Network Indicator, Quick Settings,
+ Spacer, and Separator.

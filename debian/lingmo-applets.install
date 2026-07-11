@@ -1,0 +1,3 @@
+usr/lib/*/lingmo/applets/lingmo-applet-*.so
+usr/lib/*/lingmo/plugins/*.lingmo-plugin
+usr/share/lingmo/applets/*/qml/

@@ -1,0 +1,13 @@
+{
+    "id":          "org.lingmo.applet.battery",
+    "type":        "applet",
+    "version":     "1.0.0",
+    "api-name":    "org.lingmo.Applet",
+    "api-version": "1.0",
+    "library":     "lingmo-applet-battery",
+    "name":        { "en": "Battery", "zh_CN": "电池" },
+    "description": { "en": "Show battery charge level and status",
+                     "zh_CN": "显示电池电量和充电状态" },
+    "icon":        "battery-full-symbolic",
+    "category":    "system"
+}

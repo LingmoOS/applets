@@ -1,0 +1,13 @@
+{
+    "id":          "org.lingmo.applet.taskmanager",
+    "type":        "applet",
+    "version":     "1.0.0",
+    "api-name":    "org.lingmo.Applet",
+    "api-version": "1.0",
+    "library":     "lingmo-applet-taskmanager",
+    "name":        { "en": "Task Manager", "zh_CN": "任务管理器" },
+    "description": { "en": "Show running windows as taskbar buttons",
+                     "zh_CN": "将运行中的窗口显示为任务栏按钮" },
+    "icon":        "view-list-symbolic",
+    "category":    "system"
+}

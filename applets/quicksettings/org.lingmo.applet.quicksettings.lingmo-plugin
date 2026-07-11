@@ -1,0 +1,13 @@
+{
+    "id":          "org.lingmo.applet.quicksettings",
+    "type":        "applet",
+    "version":     "1.0.0",
+    "api-name":    "org.lingmo.Applet",
+    "api-version": "1.0",
+    "library":     "lingmo-applet-quicksettings",
+    "name":        { "en": "Quick Settings", "zh_CN": "快速设置" },
+    "description": { "en": "Expandable panel for Wi-Fi, Bluetooth, night mode and DND toggles",
+                     "zh_CN": "可展开的面板区域，包含 Wi-Fi、蓝牙、夜间模式和勿扰模式开关" },
+    "icon":        "preferences-system-symbolic",
+    "category":    "system"
+}

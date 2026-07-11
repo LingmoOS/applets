@@ -1,0 +1,3 @@
+usr/include/LingmoApplets/
+usr/lib/*/libLingmoApplets.so
+usr/lib/*/cmake/LingmoApplets/

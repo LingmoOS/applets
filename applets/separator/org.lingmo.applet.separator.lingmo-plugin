@@ -1,0 +1,13 @@
+{
+    "id":          "org.lingmo.applet.separator",
+    "type":        "applet",
+    "version":     "1.0.0",
+    "api-name":    "org.lingmo.Applet",
+    "api-version": "1.0",
+    "library":     "lingmo-applet-separator",
+    "name":        { "en": "Separator", "zh_CN": "分隔符" },
+    "description": { "en": "Visual separator between panel applet groups",
+                     "zh_CN": "面板 applet 分组之间的视觉分隔线" },
+    "icon":        "view-dual-symbolic",
+    "category":    "utilities"
+}
